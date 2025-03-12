@@ -1,10 +1,10 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import TopHalf from "@/s-components/game/TopHalf";
 import BottomHalf from "@/s-components/game/BottomHalf";
 import MenuModal from "@/s-components/game/MenuModal";
-import {ThemeProps} from "@/utils/theme";
-import CenterMenuButton from "@/s-components/game/CenterMenuButton";
+import { ThemeProps } from "@/utils/theme";
+import ConfettiCannon from "react-native-confetti-cannon";
 
 const GameContainer = styled.View`
     flex: 1;
@@ -16,6 +16,16 @@ export default function Game() {
     const [topScore, setTopScore] = useState<number>(0);
     const [bottomScore, setBottomScore] = useState<number>(0);
     const [modalVisible, setModalVisible] = useState<boolean>(false);
+    const [showConfetti, setShowConfetti] = useState<boolean>(false);
+
+    useEffect(() => {
+        if ((topScore >= 20 || bottomScore >= 20) && !modalVisible) {
+            setShowConfetti(true);
+            setModalVisible(true);
+            setTopScore(0);
+            setBottomScore(0);
+        }
+    }, [topScore, bottomScore]);
 
     return (
         <GameContainer>
@@ -29,7 +39,14 @@ export default function Game() {
                 onIncrement={() => setBottomScore((prev) => prev + 1)}
                 onDecrement={() => setBottomScore((prev) => (prev > 0 ? prev - 1 : 0))}
             />
-            <CenterMenuButton onPress={() => setModalVisible(true)}/>
+            {showConfetti && (
+                <ConfettiCannon
+                    count={200}
+                    origin={{ x: -10, y: 0 }}
+                    fadeOut={true}
+                    onAnimationEnd={() => setShowConfetti(false)}
+                />
+            )}
             <MenuModal
                 visible={modalVisible}
                 onClose={() => setModalVisible(false)}
