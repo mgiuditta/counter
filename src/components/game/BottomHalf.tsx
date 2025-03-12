@@ -2,6 +2,7 @@ import React from "react";
 import {TouchableOpacity, Text} from "react-native";
 import styled from "styled-components/native";
 import {ThemeProps} from "@/utils/theme";
+import {MaterialIcons} from "@expo/vector-icons";
 
 interface BottomHalfProps {
     score: number;
@@ -31,11 +32,13 @@ const ActionButton = styled(TouchableOpacity)`
     margin-top: ${(props: ThemeProps) => props.theme.spacing.sm}px;
 `;
 
-const ButtonText = styled(Text)`
-    font-size: ${(props: ThemeProps) => props.theme.fontSizes.md}px;
-    font-family: ${(props: ThemeProps) => props.theme.fonts.primary.regular};
-    color: ${(props: ThemeProps) => props.theme.colors.background};
-`;
+const DecrementIcon = styled(MaterialIcons).attrs(
+    (props: ThemeProps) => ({
+        name: "remove",
+        size: props.theme.fontSizes.md,
+        color: props.theme.colors.background,
+    })
+)``;
 
 const BottomHalf: React.FC<BottomHalfProps> = ({score, onIncrement, onDecrement}) => {
     return (
@@ -45,7 +48,7 @@ const BottomHalf: React.FC<BottomHalfProps> = ({score, onIncrement, onDecrement}
                 e.stopPropagation();
                 onDecrement();
             }}>
-                <ButtonText>-1</ButtonText>
+                <DecrementIcon/>
             </ActionButton>
         </BottomHalfContainer>
     );

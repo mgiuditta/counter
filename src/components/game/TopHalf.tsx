@@ -1,7 +1,8 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
+import {TouchableOpacity, Text} from "react-native";
 import styled from "styled-components/native";
-import { ThemeProps } from "@/utils/theme";
+import {ThemeProps} from "@/utils/theme";
+import {MaterialIcons} from "@expo/vector-icons";
 
 interface TopHalfProps {
     score: number;
@@ -33,17 +34,22 @@ const ActionButton = styled(TouchableOpacity)`
     transform: rotate(180deg);
 `;
 
-const ButtonText = styled(Text)`
-    font-size: ${(props: ThemeProps) => props.theme.fontSizes.md}px;
-    font-family: ${(props: ThemeProps) => props.theme.fonts.primary.regular};
-    color: ${(props: ThemeProps) => props.theme.colors.background};
-`;
+const DecrementIcon = styled(MaterialIcons).attrs(
+    (props: ThemeProps) => ({
+        name: "remove",
+        size: props.theme.fontSizes.md,
+        color: props.theme.colors.background,
+    })
+)``;
 
-const TopHalf: React.FC<TopHalfProps> = ({ score, onIncrement, onDecrement }) => {
+const TopHalf: React.FC<TopHalfProps> = ({score, onIncrement, onDecrement}) => {
     return (
         <TopHalfContainer onPress={onIncrement}>
-            <ActionButton onPress={(e: Event) => { e.stopPropagation(); onDecrement(); }}>
-                <ButtonText>-1</ButtonText>
+            <ActionButton onPress={(e: Event) => {
+                e.stopPropagation();
+                onDecrement();
+            }}>
+                <DecrementIcon/>
             </ActionButton>
             <ScoreText>{score}</ScoreText>
         </TopHalfContainer>
