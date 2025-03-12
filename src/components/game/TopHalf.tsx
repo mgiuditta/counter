@@ -16,6 +16,7 @@ const TopHalfContainer = styled(TouchableOpacity)`
     align-items: center;
     background-color: ${(props: ThemeProps) => props.theme.colors.secondary};
     padding: ${(props: ThemeProps) => props.theme.spacing.md}px;
+    position: relative;
 `;
 
 const ScoreText = styled(Text)`
@@ -29,9 +30,16 @@ const ScoreText = styled(Text)`
 const ActionButton = styled(TouchableOpacity)`
     background-color: ${(props: ThemeProps) => props.theme.colors.primary};
     padding: ${(props: ThemeProps) => props.theme.spacing.sm}px;
-    border-radius: 8px;
     margin-top: ${(props: ThemeProps) => props.theme.spacing.sm}px;
     transform: rotate(180deg);
+    width: 200%;
+    height: 40%;
+    position: absolute;
+    top: -10%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 `;
 
 const DecrementIcon = styled(MaterialIcons).attrs(
@@ -49,7 +57,6 @@ const TopHalf: React.FC<TopHalfProps> = ({score, onIncrement, onDecrement}) => {
                 e.stopPropagation();
                 onDecrement();
             }}>
-                <DecrementIcon/>
             </ActionButton>
             <ScoreText>{score}</ScoreText>
         </TopHalfContainer>

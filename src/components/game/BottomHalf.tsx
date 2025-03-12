@@ -28,8 +28,13 @@ const ScoreText = styled(Text)`
 const ActionButton = styled(TouchableOpacity)`
     background-color: ${(props: ThemeProps) => props.theme.colors.secondary};
     padding: ${(props: ThemeProps) => props.theme.spacing.sm}px;
-    border-radius: 8px;
     margin-top: ${(props: ThemeProps) => props.theme.spacing.sm}px;
+    transform: rotate(180deg);
+    width: 200%;
+    height: 40%;
+    position: absolute;
+    bottom: -10%;
+    border-radius: 50%;
 `;
 
 const DecrementIcon = styled(MaterialIcons).attrs(
@@ -48,7 +53,6 @@ const BottomHalf: React.FC<BottomHalfProps> = ({score, onIncrement, onDecrement}
                 e.stopPropagation();
                 onDecrement();
             }}>
-                <DecrementIcon/>
             </ActionButton>
         </BottomHalfContainer>
     );
