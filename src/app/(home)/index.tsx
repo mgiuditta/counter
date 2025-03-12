@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {useTheme} from "styled-components/native";
 import {SafeAreaView} from "react-native-safe-area-context";
 import HomeLanding from "@/s-components/layouts/home/HomeLanding";
+import {Link} from "expo-router";
 
 export default function Index() {
 
@@ -42,9 +43,11 @@ export default function Index() {
         <HomeView>
             <HomeLayout>
                 <HomeLanding/>
-                <HomeButton>
-                    <HomeButtonText>Play</HomeButtonText>
-                </HomeButton>
+                <Link href={'/game'} asChild={true}>
+                    <HomeButton>
+                        <HomeButtonText>Play</HomeButtonText>
+                    </HomeButton>
+                </Link>
             </HomeLayout>
         </HomeView>
     );

@@ -9,7 +9,9 @@ export default function RootLayout() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Stack screenOptions={{headerShown: false}}/>
+            <Stack screenOptions={{headerShown: false}}>
+                <Stack.Screen name={'game'}/>
+            </Stack>
         </ThemeProvider>
     );
 }
