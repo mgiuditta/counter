@@ -15,7 +15,6 @@ export default function HomeLanding() {
 
     return (
         <View>
-
         </View>
     )
 }
