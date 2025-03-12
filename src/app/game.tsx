@@ -4,6 +4,7 @@ import TopHalf from "@/s-components/game/TopHalf";
 import BottomHalf from "@/s-components/game/BottomHalf";
 import MenuModal from "@/s-components/game/MenuModal";
 import { ThemeProps } from "@/utils/theme";
+import { router } from 'expo-router';
 import ConfettiCannon from "react-native-confetti-cannon";
 
 const GameContainer = styled.View`
@@ -52,6 +53,7 @@ export default function Game() {
                 onClose={() => setModalVisible(false)}
                 onHome={() => {
                     setModalVisible(false);
+                    router.push('/');
                 }}
                 onReset={() => {
                     setTopScore(0);
