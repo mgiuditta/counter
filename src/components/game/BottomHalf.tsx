@@ -14,7 +14,7 @@ const BottomHalfContainer = styled(TouchableOpacity)`
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: ${(props: ThemeProps) => props.theme.colors.background};
+    background-color: ${(props: ThemeProps) => props.theme.colors.primary};
     padding: ${(props: ThemeProps) => props.theme.spacing.md}px;
 `;
 
