@@ -84,4 +84,8 @@ const theme: ThemeType = {
     },
 };
 
+export interface ThemeProps {
+    theme: ThemeType
+}
+
 export default theme;
