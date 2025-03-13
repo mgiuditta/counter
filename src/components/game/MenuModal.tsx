@@ -31,7 +31,7 @@ const ModalContent = styled.View`
 
 const ModalButton = styled(TouchableOpacity)`
     flex-direction: row;
-    background-color: ${(props: ThemeProps) => props.theme.colors.primary};
+    background-color: ${(props: ThemeProps) => props.theme.colors.secondary};
     padding: ${(props: ThemeProps) => props.theme.spacing.sm}px ${(props: ThemeProps) => props.theme.spacing.md}px;
     border-radius: 8px;
     margin-top: ${(props: ThemeProps) => props.theme.spacing.md}px;
