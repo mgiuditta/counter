@@ -1,5 +1,5 @@
 import React from "react";
-import {TouchableOpacity, Text} from "react-native";
+import {TouchableOpacity, Text, View} from "react-native";
 import styled from "styled-components/native";
 import {ThemeProps} from "@/utils/theme";
 import {MaterialIcons} from "@expo/vector-icons";
@@ -31,7 +31,6 @@ const ActionButton = styled(TouchableOpacity)`
     background-color: ${(props: ThemeProps) => props.theme.colors.primary};
     padding: ${(props: ThemeProps) => props.theme.spacing.sm}px;
     margin-top: ${(props: ThemeProps) => props.theme.spacing.sm}px;
-    transform: rotate(180deg);
     width: 200%;
     height: 40%;
     position: absolute;
@@ -42,14 +41,6 @@ const ActionButton = styled(TouchableOpacity)`
     align-items: flex-end;
 `;
 
-const DecrementIcon = styled(MaterialIcons).attrs(
-    (props: ThemeProps) => ({
-        name: "remove",
-        size: props.theme.fontSizes.md,
-        color: props.theme.colors.background,
-    })
-)``;
-
 const TopHalf: React.FC<TopHalfProps> = ({score, onIncrement, onDecrement}) => {
     return (
         <TopHalfContainer onPress={onIncrement}>
@@ -58,7 +49,9 @@ const TopHalf: React.FC<TopHalfProps> = ({score, onIncrement, onDecrement}) => {
                 onDecrement();
             }}>
             </ActionButton>
-            <ScoreText>{score}</ScoreText>
+            <View style={{transform: [{rotate: '180deg'}]}}>
+                <ScoreText>{score}</ScoreText>
+            </View>
         </TopHalfContainer>
     );
 };

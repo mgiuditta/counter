@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
-import { ThemeProps } from "@/utils/theme";
+import theme, { ThemeProps } from "@/utils/theme";
 import { MaterialIcons } from "@expo/vector-icons";
 
 interface MenuModalProps {
@@ -23,6 +23,9 @@ const ModalContent = styled.View`
     background-color: ${(props: ThemeProps) => props.theme.colors.background};
     padding: ${(props: ThemeProps) => props.theme.spacing.md}px;
     border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 `;
 
@@ -41,14 +44,6 @@ const ButtonText = styled.Text`
     color: ${(props: ThemeProps) => props.theme.colors.background};
     margin-left: ${(props: ThemeProps) => props.theme.spacing.sm}px;
 `;
-
-const HomeIcon = styled(MaterialIcons).attrs(
-    (props: ThemeProps) => ({
-        name: "home",
-        size: props.theme.fontSizes.lg,
-        color: props.theme.colors.background,
-    })
-)``;
 
 const ResetIcon = styled(MaterialIcons).attrs(
     (props: ThemeProps) => ({
@@ -71,15 +66,11 @@ const MenuModal: React.FC<MenuModalProps> = ({ visible, onClose, onHome, onReset
         <Modal visible={visible} transparent animationType="fade">
             <ModalOverlay>
                 <ModalContent>
-                    <ModalButton onPress={onHome}>
-                        <HomeIcon />
-                        <ButtonText>Home</ButtonText>
-                    </ModalButton>
                     <ModalButton onPress={onReset}>
                         <ResetIcon />
                         <ButtonText>Reset Score</ButtonText>
                     </ModalButton>
-                    <ModalButton onPress={onClose}>
+                    <ModalButton style={{backgroundColor: theme.colors.error}} onPress={onClose}>
                         <CloseIcon />
                         <ButtonText>Close</ButtonText>
                     </ModalButton>

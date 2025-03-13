@@ -16,7 +16,7 @@ const CenterButtonContainer = styled(TouchableOpacity)(({ theme }: ThemeProps) =
     backgroundColor: theme.colors.primary,
     padding: theme.spacing.md,
     borderRadius: 50,
-}));
+})) as unknown as typeof TouchableOpacity;
 
 const MenuIcon = styled(MaterialIcons).attrs(({ theme }: ThemeProps) => ({
     name: "menu",

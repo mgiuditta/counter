@@ -6,6 +6,7 @@ import MenuModal from "@/s-components/game/MenuModal";
 import { ThemeProps } from "@/utils/theme";
 import { router } from 'expo-router';
 import ConfettiCannon from "react-native-confetti-cannon";
+import CenterMenuButton from "@/s-components/game/CenterMenuButton";
 
 const GameContainer = styled.View`
     flex: 1;
@@ -13,7 +14,7 @@ const GameContainer = styled.View`
     position: relative;
 `;
 
-export default function Game() {
+export default function Index() {
     const [topScore, setTopScore] = useState<number>(0);
     const [bottomScore, setBottomScore] = useState<number>(0);
     const [modalVisible, setModalVisible] = useState<boolean>(false);
@@ -39,6 +40,11 @@ export default function Game() {
                 score={bottomScore}
                 onIncrement={() => setBottomScore((prev) => prev + 1)}
                 onDecrement={() => setBottomScore((prev) => (prev > 0 ? prev - 1 : 0))}
+            />
+            <CenterMenuButton
+                onPress={() => {
+                    setModalVisible(true);
+                }}
             />
             {showConfetti && (
                 <ConfettiCannon
