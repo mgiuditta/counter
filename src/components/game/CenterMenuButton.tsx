@@ -17,12 +17,13 @@ const CenterButtonContainer = styled(TouchableOpacity)(({theme}: ThemeProps) => 
     borderRadius: 50,
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
 })) as unknown as typeof TouchableOpacity;
 
 const CenterMenuButton: React.FC<CenterMenuButtonProps> = ({onPress}) => {
     return (
         <CenterButtonContainer style={{transform: [{translateY: -35}]}} onPress={onPress}>
-
+            <LogoSvg width={40} height={40} />
         </CenterButtonContainer>
     );
 };
