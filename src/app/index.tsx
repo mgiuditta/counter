@@ -10,7 +10,7 @@ import CenterMenuButton from "@/s-components/game/CenterMenuButton";
 
 const GameContainer = styled.View`
     flex: 1;
-    background-color: ${(props: ThemeProps) => props.theme.colors.background};
+    background-color: ${(props: ThemeProps) => props.theme.colors.primary};
     position: relative;
 `;
 

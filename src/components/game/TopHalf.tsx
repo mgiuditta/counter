@@ -2,7 +2,6 @@ import React from "react";
 import {TouchableOpacity, Text, View} from "react-native";
 import styled from "styled-components/native";
 import {ThemeProps} from "@/utils/theme";
-import {MaterialIcons} from "@expo/vector-icons";
 
 interface TopHalfProps {
     score: number;
@@ -32,9 +31,9 @@ const ActionButton = styled(TouchableOpacity)`
     padding: ${(props: ThemeProps) => props.theme.spacing.sm}px;
     margin-top: ${(props: ThemeProps) => props.theme.spacing.sm}px;
     width: 200%;
-    height: 40%;
+    height: 45%;
     position: absolute;
-    top: -10%;
+    top: -15%;
     border-radius: 50%;
     display: flex;
     justify-content: center;
