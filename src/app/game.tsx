@@ -53,7 +53,7 @@ export default function Game() {
                 onClose={() => setModalVisible(false)}
                 onHome={() => {
                     setModalVisible(false);
-                    router.push('/');
+                    router.back();
                 }}
                 onReset={() => {
                     setTopScore(0);
