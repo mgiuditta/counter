@@ -43,19 +43,19 @@ export interface ThemeType {
 
 const theme: ThemeType = {
     colors: {
-        primary: '#5A3EBA',
-        secondary: '#F5A623',
-        background: '#1C1C3C',
-        text: '#FFFFFF',
-        textSecondary: '#C0C0C0',
-        border: '#7442F5',
-        error: '#FF3B30',
+        primary: '#7D3C98',
+        secondary: '#2ECC71',
+        background: '#121212',
+        text: '#FAFAFA',
+        textSecondary: '#BDBDBD',
+        border: '#9B59B6',
+        error: '#E74C3C',
     },
     effects: {
-        shadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
-        glow: '0px 0px 8px rgba(245, 166, 35, 0.8)',
+        shadow: '0px 4px 12px rgba(0, 0, 0, 0.25)',
+        glow: '0px 0px 12px rgba(46, 204, 113, 0.7)',
         transition: 'all 0.3s ease-in-out',
-        gradient: 'linear-gradient(135deg, #5A3EBA, #F5A623)',
+        gradient: 'linear-gradient(135deg, #7D3C98, #2ECC71)',
     },
     spacing: {
         xs: 4,
@@ -78,8 +78,8 @@ const theme: ThemeType = {
             bold: 'Poppins-Bold',
         },
         secondary: {
-            regular: 'Roboto',
-            bold: 'Roboto-Bold',
+            regular: 'Lato',
+            bold: 'Lato-Bold',
         },
     },
 };
