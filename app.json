@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MG Lore Counter",
-    "slug": "counter",
+    "slug": "mg-lore-counter",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -15,7 +15,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#121212"
       },
       "package": "com.matteogiuditta.counter"
     },
@@ -44,6 +44,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ecd9701e-3935-4f0a-ab55-a52e48c07b19"
+      }
+    },
+    "owner": "matteogiuditta"
   }
 }
