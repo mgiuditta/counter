@@ -7,21 +7,21 @@ import {useEffect} from "react";
 
 export default function RootLayout() {
 
-    const [loaded, error] = useAppFonts();
+        const [loaded, error] = useAppFonts();
 
-    useEffect(() => {
-        if (loaded || error) {
-            SplashScreen.hideAsync();
+        useEffect(() => {
+                if (loaded || error) {
+                        SplashScreen.hideAsync();
+                }
+        }, [loaded, error]);
+
+        if (!loaded && !error) {
+                return null;
         }
-    }, [loaded, error]);
 
-    if (!loaded && !error) {
-        return null;
-    }
-
-    return (
-        <ThemeProvider theme={theme}>
-            <Stack screenOptions={{headerShown: false}}/>
-        </ThemeProvider>
-    );
+        return (
+            <ThemeProvider theme={theme}>
+                    <Stack screenOptions={{headerShown: false}}/>
+            </ThemeProvider>
+        );
 }

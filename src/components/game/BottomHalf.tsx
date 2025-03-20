@@ -1,13 +1,13 @@
 import React from "react";
-import {TouchableOpacity, Text} from "react-native";
+import {Text, TouchableOpacity} from "react-native";
 import styled from "styled-components/native";
 import {ThemeProps} from "@/utils/theme";
 import {MaterialIcons} from "@expo/vector-icons";
 
 interface BottomHalfProps {
-    score: number;
-    onIncrement: () => void;
-    onDecrement: () => void;
+        score: number;
+        onIncrement: () => void;
+        onDecrement: () => void;
 }
 
 const BottomHalfContainer = styled(TouchableOpacity)`
@@ -39,23 +39,23 @@ const ActionButton = styled(TouchableOpacity)`
 
 const DecrementIcon = styled(MaterialIcons).attrs(
     (props: ThemeProps) => ({
-        name: "remove",
-        size: props.theme.fontSizes.md,
-        color: props.theme.colors.background,
+            name: "remove",
+            size: props.theme.fontSizes.md,
+            color: props.theme.colors.background,
     })
 )``;
 
 const BottomHalf: React.FC<BottomHalfProps> = ({score, onIncrement, onDecrement}) => {
-    return (
-        <BottomHalfContainer onPress={onIncrement}>
-            <ScoreText>{score}</ScoreText>
-            <ActionButton onPress={(e: Event) => {
-                e.stopPropagation();
-                onDecrement();
-            }}>
-            </ActionButton>
-        </BottomHalfContainer>
-    );
+        return (
+            <BottomHalfContainer onPress={onIncrement}>
+                    <ScoreText>{score}</ScoreText>
+                    <ActionButton onPress={(e: Event) => {
+                            e.stopPropagation();
+                            onDecrement();
+                    }}>
+                    </ActionButton>
+            </BottomHalfContainer>
+        );
 };
 
 export default BottomHalf;

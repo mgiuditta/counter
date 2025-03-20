@@ -1,12 +1,12 @@
 import React from "react";
-import {TouchableOpacity, Text, View} from "react-native";
+import {Text, TouchableOpacity, View} from "react-native";
 import styled from "styled-components/native";
 import {ThemeProps} from "@/utils/theme";
 
 interface TopHalfProps {
-    score: number;
-    onIncrement: () => void;
-    onDecrement: () => void;
+        score: number;
+        onIncrement: () => void;
+        onDecrement: () => void;
 }
 
 const TopHalfContainer = styled(TouchableOpacity)`
@@ -41,18 +41,18 @@ const ActionButton = styled(TouchableOpacity)`
 `;
 
 const TopHalf: React.FC<TopHalfProps> = ({score, onIncrement, onDecrement}) => {
-    return (
-        <TopHalfContainer onPress={onIncrement}>
-            <ActionButton onPress={(e: Event) => {
-                e.stopPropagation();
-                onDecrement();
-            }}>
-            </ActionButton>
-            <View style={{transform: [{rotate: '180deg'}]}}>
-                <ScoreText>{score}</ScoreText>
-            </View>
-        </TopHalfContainer>
-    );
+        return (
+            <TopHalfContainer onPress={onIncrement}>
+                    <ActionButton onPress={(e: Event) => {
+                            e.stopPropagation();
+                            onDecrement();
+                    }}>
+                    </ActionButton>
+                    <View style={{transform: [{rotate: '180deg'}]}}>
+                            <ScoreText>{score}</ScoreText>
+                    </View>
+            </TopHalfContainer>
+        );
 };
 
 export default TopHalf;

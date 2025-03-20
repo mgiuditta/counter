@@ -5,27 +5,27 @@ import {ThemeProps} from "@/utils/theme";
 import LogoSvg from "@/s-components/icons/LogoSvg";
 
 interface CenterMenuButtonProps {
-    onPress: () => void;
+        onPress: () => void;
 }
 
 const CenterButtonContainer = styled(TouchableOpacity)(({theme}: ThemeProps) => ({
-    position: "absolute",
-    alignSelf: "center",
-    top: "50%",
-    backgroundColor: theme.colors.background,
-    padding: theme.spacing.md,
-    borderRadius: 50,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+        position: "absolute",
+        alignSelf: "center",
+        top: "50%",
+        backgroundColor: theme.colors.background,
+        padding: theme.spacing.md,
+        borderRadius: 50,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
 })) as unknown as typeof TouchableOpacity;
 
 const CenterMenuButton: React.FC<CenterMenuButtonProps> = ({onPress}) => {
-    return (
-        <CenterButtonContainer style={{transform: [{translateY: -35}]}} onPress={onPress}>
-            <LogoSvg width={40} height={40} />
-        </CenterButtonContainer>
-    );
+        return (
+            <CenterButtonContainer style={{transform: [{translateY: -35}]}} onPress={onPress}>
+                    <LogoSvg width={40} height={40}/>
+            </CenterButtonContainer>
+        );
 };
 
 export default CenterMenuButton;

@@ -1,14 +1,14 @@
 import React from "react";
-import { Modal, TouchableOpacity } from "react-native";
+import {Modal, TouchableOpacity} from "react-native";
 import styled from "styled-components/native";
-import theme, { ThemeProps } from "@/utils/theme";
-import { MaterialIcons } from "@expo/vector-icons";
+import theme, {ThemeProps} from "@/utils/theme";
+import {MaterialIcons} from "@expo/vector-icons";
 
 interface MenuModalProps {
-    visible: boolean;
-    onClose: () => void;
-    onHome: () => void;
-    onReset: () => void;
+        visible: boolean;
+        onClose: () => void;
+        onHome: () => void;
+        onReset: () => void;
 }
 
 const ModalOverlay = styled.View`
@@ -47,37 +47,37 @@ const ButtonText = styled.Text`
 
 const ResetIcon = styled(MaterialIcons).attrs(
     (props: ThemeProps) => ({
-        name: "refresh",
-        size: props.theme.fontSizes.lg,
-        color: props.theme.colors.background,
+            name: "refresh",
+            size: props.theme.fontSizes.lg,
+            color: props.theme.colors.background,
     })
 )``;
 
 const CloseIcon = styled(MaterialIcons).attrs(
     (props: ThemeProps) => ({
-        name: "close",
-        size: props.theme.fontSizes.lg,
-        color: props.theme.colors.background,
+            name: "close",
+            size: props.theme.fontSizes.lg,
+            color: props.theme.colors.background,
     })
 )``;
 
-const MenuModal: React.FC<MenuModalProps> = ({ visible, onClose, onHome, onReset }) => {
-    return (
-        <Modal visible={visible} transparent animationType="fade">
-            <ModalOverlay>
-                <ModalContent>
-                    <ModalButton onPress={onReset}>
-                        <ResetIcon />
-                        <ButtonText>Reset Score</ButtonText>
-                    </ModalButton>
-                    <ModalButton style={{backgroundColor: theme.colors.error}} onPress={onClose}>
-                        <CloseIcon />
-                        <ButtonText>Close</ButtonText>
-                    </ModalButton>
-                </ModalContent>
-            </ModalOverlay>
-        </Modal>
-    );
+const MenuModal: React.FC<MenuModalProps> = ({visible, onClose, onHome, onReset}) => {
+        return (
+            <Modal visible={visible} transparent animationType="fade">
+                    <ModalOverlay>
+                            <ModalContent>
+                                    <ModalButton onPress={onReset}>
+                                            <ResetIcon/>
+                                            <ButtonText>Reset Score</ButtonText>
+                                    </ModalButton>
+                                    <ModalButton style={{backgroundColor: theme.colors.error}} onPress={onClose}>
+                                            <CloseIcon/>
+                                            <ButtonText>Close</ButtonText>
+                                    </ModalButton>
+                            </ModalContent>
+                    </ModalOverlay>
+            </Modal>
+        );
 };
 
 export default MenuModal;
