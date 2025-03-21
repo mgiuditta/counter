@@ -1,9 +1,11 @@
-import {Stack} from "expo-router";
+import {Slot} from "expo-router";
 import theme from "@/utils/theme";
 import {ThemeProvider} from "styled-components/native";
 import * as SplashScreen from 'expo-splash-screen';
 import {useAppFonts} from "@/utils/fonts";
 import {useEffect} from "react";
+import {SafeAreaView} from "react-native";
+import {SafeAreaProvider} from "react-native-safe-area-context";
 
 export default function RootLayout() {
 
@@ -21,7 +23,11 @@ export default function RootLayout() {
 
         return (
             <ThemeProvider theme={theme}>
-                    <Stack screenOptions={{headerShown: false}}/>
+                    <SafeAreaProvider>
+                            <SafeAreaView style={{flex: 1}}>
+                                    <Slot/>
+                            </SafeAreaView>
+                    </SafeAreaProvider>
             </ThemeProvider>
         );
 }

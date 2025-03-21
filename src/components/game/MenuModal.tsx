@@ -3,6 +3,7 @@ import {Modal, TouchableOpacity} from "react-native";
 import styled from "styled-components/native";
 import theme, {ThemeProps} from "@/utils/theme";
 import {MaterialIcons} from "@expo/vector-icons";
+import {Router, useRouter} from "expo-router";
 
 interface MenuModalProps {
         visible: boolean;
@@ -21,7 +22,7 @@ const ModalOverlay = styled.View`
 const ModalContent = styled.View`
     width: 80%;
     background-color: ${(props: ThemeProps) => props.theme.colors.background};
-    padding: ${(props: ThemeProps) => props.theme.spacing.md}px;
+    padding: ${(props: ThemeProps) => props.theme.spacing.lg}px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -33,9 +34,10 @@ const ModalButton = styled(TouchableOpacity)`
     flex-direction: row;
     background-color: ${(props: ThemeProps) => props.theme.colors.secondary};
     padding: ${(props: ThemeProps) => props.theme.spacing.sm}px ${(props: ThemeProps) => props.theme.spacing.md}px;
-    border-radius: 8px;
+    border-radius: 48px;
     margin-top: ${(props: ThemeProps) => props.theme.spacing.md}px;
     align-items: center;
+    width: 100%;
 `;
 
 const ButtonText = styled.Text`
@@ -61,11 +63,29 @@ const CloseIcon = styled(MaterialIcons).attrs(
     })
 )``;
 
+const HomeIcon = styled(MaterialIcons).attrs(
+    (props: ThemeProps) => ({
+            name: "home",
+            size: props.theme.fontSizes.lg,
+            color: props.theme.colors.background,
+    })
+)``;
+
 const MenuModal: React.FC<MenuModalProps> = ({visible, onClose, onHome, onReset}) => {
+        const router: Router = useRouter();
+
+        const goHome = (): void => {
+                router.back();
+        }
+
         return (
             <Modal visible={visible} transparent animationType="fade">
                     <ModalOverlay>
                             <ModalContent>
+                                    <ModalButton style={{backgroundColor: theme.colors.primary}} onPress={goHome}>
+                                            <HomeIcon/>
+                                            <ButtonText>Home</ButtonText>
+                                    </ModalButton>
                                     <ModalButton onPress={onReset}>
                                             <ResetIcon/>
                                             <ButtonText>Reset Score</ButtonText>
