@@ -1,10 +1,16 @@
 import TabScreenWrapper from "@/s-components/layouts/TabsWrapper";
-import {Text} from "react-native";
+import Header from "@/s-components/layouts/Header";
+import NearbyTournamentsSection from "@/s-components/events/NearbyTournamentsSection";
+import {mockedEvents} from "../../mocks/mockedEvents";
 
 export default function () {
         return (
             <TabScreenWrapper>
-                    <Text>Ciao</Text>
+                    <Header/>
+                    <NearbyTournamentsSection
+                        events={mockedEvents}
+                        onLocationSearch={() => console.log('Ricerca GPS')}
+                    />
             </TabScreenWrapper>
         );
 }

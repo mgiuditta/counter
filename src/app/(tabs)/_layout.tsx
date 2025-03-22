@@ -24,10 +24,11 @@ function ThemedTabs() {
             <Tabs
                 screenOptions={({route}) => ({
                         headerShown: false,
+                        tabBarShowLabel: false,
                         tabBarStyle: {
                                 backgroundColor: theme.colors.background,
                                 borderTopColor: theme.colors.border,
-                                height: 70,
+                                height: 80,
                                 paddingBottom: 20,
                                 paddingTop: 10,
                         },
@@ -52,12 +53,15 @@ function ThemedTabs() {
                                                 break;
                                 }
 
-                                return <Ionicons name={iconName} size={size} color={color}/>;
+                                return <Ionicons
+                                    name={iconName}
+                                    size={size}
+                                    color={color}/>;
                         },
                 })}
             >
-                    <Tabs.Screen name="index" options={{title: 'Home'}}/>
                     <Tabs.Screen name="multiplayer" options={{title: 'Multiplayer'}}/>
+                    <Tabs.Screen name="index" options={{title: 'Home'}}/>
                     <Tabs.Screen name="tournaments" options={{title: 'Tornei'}}/>
             </Tabs>
         );
