@@ -9,7 +9,7 @@ export default function TabsLayout() {
         return (
             <ThemeProvider theme={theme}>
                     <SafeAreaProvider>
-                            <SafeAreaView style={{flex: 1}}>
+                            <SafeAreaView style={{flex: 1, backgroundColor: theme.colors.background}}>
                                     <ThemedTabs/>
                             </SafeAreaView>
                     </SafeAreaProvider>
@@ -31,7 +31,7 @@ function ThemedTabs() {
                                 paddingBottom: 20,
                                 paddingTop: 10,
                         },
-                        tabBarActiveTintColor: theme.colors.primary,
+                        tabBarActiveTintColor: theme.colors.secondary,
                         tabBarInactiveTintColor: theme.colors.textSecondary,
                         tabBarLabelStyle: {
                                 fontFamily: theme.fonts.primary.regular,
