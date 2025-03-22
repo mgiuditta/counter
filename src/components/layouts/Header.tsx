@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {Ionicons} from '@expo/vector-icons';
-import {TouchableOpacity} from 'react-native';
-import {ThemeProps} from '@/utils/theme';
+import { Ionicons } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native';
+import { ThemeProps } from '@/utils/theme';
 
 type HeaderProps = {
         username?: string;
         onProfilePress?: () => void;
 };
 
-export default function Header({username = 'Illuminatore', onProfilePress}: HeaderProps) {
+export default function Header({ username = 'Illuminatore', onProfilePress }: HeaderProps) {
         return (
             <Container>
                     <WelcomeText>Ciao, {username} 👋</WelcomeText>
                     <TouchableOpacity onPress={onProfilePress}>
-                            <Ionicons name="person-circle-outline" size={36} color="#FAFAFA"/>
+                            <Ionicons name="person-circle-outline" size={36} color="#FAFAFA" />
                     </TouchableOpacity>
             </Container>
         );

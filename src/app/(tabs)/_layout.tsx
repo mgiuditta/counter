@@ -60,7 +60,6 @@ function ThemedTabs() {
                         },
                 })}
             >
-                    <Tabs.Screen name="multiplayer" options={{title: 'Multiplayer'}}/>
                     <Tabs.Screen name="index" options={{title: 'Home'}}/>
                     <Tabs.Screen name="tournaments" options={{title: 'Tornei'}}/>
             </Tabs>

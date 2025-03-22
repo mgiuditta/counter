@@ -43,19 +43,19 @@ export interface ThemeType {
 
 const theme: ThemeType = {
         colors: {
-                primary: '#7D3C98',
-                secondary: '#2ECC71',
-                background: '#121212',
-                text: '#FAFAFA',
-                textSecondary: '#BDBDBD',
-                border: '#9B59B6',
-                error: '#E74C3C',
+                primary: '#9B59B6',       // viola più acceso
+                secondary: '#27AE60',     // verde vivo
+                background: '#1C1B20',    // sfondo scuro, ma leggermente più chiaro
+                text: '#FFFFFF',
+                textSecondary: '#C0C0C0',
+                border: '#3D3D50',
+                error: '#E53935',
         },
         effects: {
                 shadow: '0px 4px 12px rgba(0, 0, 0, 0.25)',
-                glow: '0px 0px 12px rgba(46, 204, 113, 0.7)',
+                glow: '0px 0px 12px rgba(39, 174, 96, 0.7)',
                 transition: 'all 0.3s ease-in-out',
-                gradient: 'linear-gradient(135deg, #7D3C98, #2ECC71)',
+                gradient: 'linear-gradient(135deg, #9B59B6, #27AE60)',
         },
         spacing: {
                 xs: 4,
@@ -84,8 +84,5 @@ const theme: ThemeType = {
         },
 };
 
-export interface ThemeProps {
-        theme: ThemeType
-}
-
 export default theme;
+export type ThemeProps = { theme: ThemeType };
