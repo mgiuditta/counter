@@ -1,6 +1,6 @@
 import {Text} from "react-native";
 
-export default function Profile() {
+export default function Tournaments() {
         return (
             <Text>Profile</Text>
         )
