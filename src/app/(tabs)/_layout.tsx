@@ -32,7 +32,7 @@ function ThemedTabs() {
                                 paddingBottom: 20,
                                 paddingTop: 10,
                         },
-                        tabBarActiveTintColor: theme.colors.secondary,
+                        tabBarActiveTintColor: theme.colors.primary,
                         tabBarInactiveTintColor: theme.colors.textSecondary,
                         tabBarLabelStyle: {
                                 fontFamily: theme.fonts.primary.regular,

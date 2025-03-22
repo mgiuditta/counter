@@ -9,12 +9,12 @@ export default function () {
         return (
             <TabScreenWrapper>
                     <Header/>
-                    <SearchInput placeholder="Cerca torneo per città" />
+                    {/*<SearchInput placeholder="Cerca torneo per città" />*/}
                     {/*<NearbyTournamentsSection*/}
                     {/*    events={mockedEvents}*/}
                     {/*    onLocationSearch={() => console.log('Ricerca GPS')}*/}
                     {/*/>*/}
-                    <LoreCounterButton/>
+                    {/*<LoreCounterButton/>*/}
             </TabScreenWrapper>
         );
 }
