@@ -1,5 +1,5 @@
 import {Tabs} from 'expo-router';
-import {ThemeProvider, useTheme} from 'styled-components/native';
+import {useTheme} from 'styled-components/native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {SafeAreaView} from 'react-native';
 import theme from '@/utils/theme';
@@ -7,13 +7,11 @@ import {Ionicons} from '@expo/vector-icons';
 
 export default function TabsLayout() {
         return (
-            <ThemeProvider theme={theme}>
-                    <SafeAreaProvider>
-                            <SafeAreaView style={{flex: 1, backgroundColor: theme.colors.background}}>
-                                    <ThemedTabs/>
-                            </SafeAreaView>
-                    </SafeAreaProvider>
-            </ThemeProvider>
+            <SafeAreaProvider>
+                    <SafeAreaView style={{flex: 1, backgroundColor: theme.colors.background}}>
+                            <ThemedTabs/>
+                    </SafeAreaView>
+            </SafeAreaProvider>
         );
 }
 

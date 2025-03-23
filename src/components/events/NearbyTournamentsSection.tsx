@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {ScrollView} from 'react-native'; // se vuoi uno scroll verticale
+import {ScrollView} from 'react-native';
 import {ThemeProps} from '@/utils/theme';
 import {Shop} from '@/s-models/Shop';
 import {IEvent} from '@/s-models/IEvent';
 import {format} from 'date-fns';
 import {it} from 'date-fns/locale';
+import {useRouter} from 'expo-router';
 
 type EventWithShop = IEvent & { shop: Shop };
 
@@ -15,12 +16,16 @@ type Props = {
 };
 
 export default function NearbyTournamentsSection({events}: Props) {
+        const router = useRouter();
+
         return (
             <SectionContainer>
-                    {/* Se vuoi renderli scorrevoli, avvolgi in uno ScrollView */}
                     <ScrollView>
                             {events.map((event) => (
-                                <EventCard key={event.id}>
+                                <EventCard
+                                    key={event.id}
+                                    onPress={() => router.push(`/events/${event.id}`)}
+                                >
                                         <EventHeader>
                                                 <EventName>{event.name}</EventName>
                                                 <EventType>{event.eventType}</EventType>
@@ -34,7 +39,6 @@ export default function NearbyTournamentsSection({events}: Props) {
                                         </EventBody>
 
                                         <EventFooter>
-                                                {/* Nome shop e indirizzo */}
                                                 <ShopName>{event.shop.name}</ShopName>
                                                 <AddressText>
                                                         {event.shop.address.street}, {event.shop.address.city}
@@ -115,5 +119,3 @@ const AddressText = styled.Text`
     color: ${(props: ThemeProps) => props.theme.colors.textSecondary};
     font-family: ${(props: ThemeProps) => props.theme.fonts.primary.regular};
 `;
-
-
