@@ -45,11 +45,8 @@ function ThemedTabs() {
                                         case 'index':
                                                 iconName = focused ? 'home' : 'home-outline';
                                                 break;
-                                        case 'multiplayer':
-                                                iconName = focused ? 'people' : 'people-outline';
-                                                break;
-                                        case 'tournaments':
-                                                iconName = focused ? 'trophy' : 'trophy-outline';
+                                        case 'game':
+                                                iconName = focused ? 'game-controller' : 'game-controller-outline';
                                                 break;
                                 }
 
@@ -61,7 +58,7 @@ function ThemedTabs() {
                 })}
             >
                     <Tabs.Screen name="index" options={{title: 'Home'}}/>
-                    <Tabs.Screen name="tournaments" options={{title: 'Tornei'}}/>
+                    <Tabs.Screen name="game" options={{title: 'Tornei'}}/>
             </Tabs>
         );
 }

@@ -30,7 +30,7 @@ export default function TabScreenWrapper({children, scrollable = false, ...rest}
         return (
             <StyledView
                 style={{
-                        paddingHorizontal: 8,
+                        paddingHorizontal: 16,
                 }}
                 {...rest}
             >

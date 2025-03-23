@@ -12,7 +12,7 @@ const SearchBar: React.FC<SearchBarProps> = ({city, onFilterPress}) => {
         return (
             <SearchBarContainer>
                     <LeftColumn>
-                            <Ionicons name={'search'} size={20} color="#FFFFFF"/>
+                            <Ionicons name={'search'} size={24} color="#FFFFFF"/>
                             <LeftTextWrapper>
                                     <TitleText>Find events</TitleText>
                                     <SubtitleText>in {city}</SubtitleText>

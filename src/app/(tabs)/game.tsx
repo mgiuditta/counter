@@ -1,11 +1,10 @@
-import SearchInput from "@/s-components/ui/SearchInput";
 import TabScreenWrapper from "@/s-components/layouts/TabsWrapper";
+import {Text} from "react-native";
 
-
-export default function Tournaments() {
+export default function Game() {
         return (
             <TabScreenWrapper scrollable>
-                    <SearchInput/>
+                    <Text>ciao</Text>
             </TabScreenWrapper>
         )
 }
