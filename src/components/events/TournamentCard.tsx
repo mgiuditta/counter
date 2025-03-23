@@ -3,8 +3,8 @@ import styled from 'styled-components/native';
 import {Ionicons} from '@expo/vector-icons';
 import {useRouter} from 'expo-router';
 import {ThemeProps} from '@/utils/theme';
-import {IEvent} from '@/models/event.model';
-import {Shop} from '@/models/shop.model';
+import {IEvent} from '@/s-models/event.model';
+import {Shop} from '@/s-models/shop.model';
 
 type Props = {
         event: IEvent & { shop: Shop };

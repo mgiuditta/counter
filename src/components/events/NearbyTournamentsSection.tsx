@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {Dimensions, FlatList} from 'react-native';
 import {ThemeProps} from '@/utils/theme';
-import {Shop} from '@/models/shop.model';
-import {IEvent} from '@/models/event.model';
+import {Shop} from '@/s-models/shop.model';
+import {IEvent} from '@/s-models/event.model';
 import TournamentCard from "@/s-components/events/TournamentCard";
 
 const {width} = Dimensions.get('window');

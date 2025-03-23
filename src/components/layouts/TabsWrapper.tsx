@@ -18,7 +18,7 @@ export default function TabScreenWrapper({children, scrollable = false, ...rest}
                         contentContainerStyle={{
                                 paddingTop: insets.top + 16,
                                 paddingBottom: insets.bottom + 16,
-                                paddingHorizontal: 16,
+                                paddingHorizontal: 8,
                         }}
                         {...rest}
                     >
@@ -30,7 +30,7 @@ export default function TabScreenWrapper({children, scrollable = false, ...rest}
         return (
             <StyledView
                 style={{
-                        paddingHorizontal: 16,
+                        paddingHorizontal: 8,
                 }}
                 {...rest}
             >

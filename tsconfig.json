@@ -9,7 +9,7 @@
       "@/hooks/*": [
         "./src/hooks/*"
       ],
-      "@/models/*": [
+      "@/s-models/*": [
         "./src/models/*"
       ],
       "@/s-components/*": [
