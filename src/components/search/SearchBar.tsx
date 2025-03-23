@@ -5,41 +5,44 @@ import {Ionicons} from "@expo/vector-icons";
 
 interface SearchBarProps {
         city: string;
+        onSearchBarPress: () => void;
         onFilterPress: () => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({city, onFilterPress}) => {
+const SearchBar: React.FC<SearchBarProps> = ({city, onFilterPress, onSearchBarPress}) => {
         return (
             <SearchBarContainer>
-                    <LeftColumn>
+                    <LeftTouchable onPress={onSearchBarPress}>
                             <Ionicons name={'search'} size={24} color="#FFFFFF"/>
                             <LeftTextWrapper>
                                     <TitleText>Find events</TitleText>
                                     <SubtitleText>in {city}</SubtitleText>
                             </LeftTextWrapper>
-                    </LeftColumn>
+                    </LeftTouchable>
 
-                    <FilterButton>
+                    <FilterButton onPress={onFilterPress}>
                             <Ionicons name={'filter'} size={20} color="#FFFFFF"/>
                     </FilterButton>
             </SearchBarContainer>
         );
 };
 
+export default SearchBar;
+
+
 export const SearchBarContainer = styled.View`
     background-color: ${(props: ThemeProps) => props.theme.colors.background};
     padding: 8px ${(props: ThemeProps) => props.theme.spacing.sm}px 8px 16px;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    align-content: center;
     border: 1px solid ${(props: ThemeProps) => props.theme.colors.border};
     border-radius: 48px;
     margin-top: ${(props: ThemeProps) => props.theme.spacing.md}px;
 `;
 
-export const LeftColumn = styled.View`
+// Al posto di LeftColumn come View, usiamo un Touchable
+const LeftTouchable = styled.TouchableOpacity`
     flex-direction: row;
     align-items: center;
     gap: ${(props: ThemeProps) => props.theme.spacing.md}px;
@@ -67,9 +70,6 @@ export const FilterButton = styled.TouchableOpacity`
     border-radius: 48px;
     border: 1px solid ${(props: ThemeProps) => props.theme.colors.border};
     padding: ${(props: ThemeProps) => props.theme.spacing.md}px;
-    display: flex;
     align-items: center;
     justify-content: center;
 `;
-
-export default SearchBar;

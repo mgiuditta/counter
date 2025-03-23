@@ -1,12 +1,12 @@
 import TabScreenWrapper from "@/s-components/layouts/TabsWrapper";
-import SearchInput from "@/s-components/ui/SearchBar";
 import {mockedEvents} from "../../mocks/mockedEvents";
 import NearbyTournamentsSection from "@/s-components/events/NearbyTournamentsSection";
+import Search from "@/s-components/search/Search";
 
 export default function () {
         return (
             <TabScreenWrapper>
-                    <SearchInput city={'Milan'} onFilterPress={() => console.log('Filter clicked')}/>
+                    <Search/>
                     <NearbyTournamentsSection events={mockedEvents}/>
                     {/*<LoreCounterButton/>*/}
             </TabScreenWrapper>
