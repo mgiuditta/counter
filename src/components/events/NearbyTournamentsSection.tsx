@@ -21,7 +21,7 @@ export default function NearbyTournamentsSection({events}: Props) {
         return (
             <SectionContainer>
                     <ScrollView>
-                            {events.map((event) => (
+                            {events.map((event: IEvent & { shop: Shop }) => (
                                 <EventCard
                                     key={event.id}
                                     onPress={() => router.push(`/events/${event.id}`)}

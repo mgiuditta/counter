@@ -8,7 +8,6 @@ export default function () {
             <TabScreenWrapper>
                     <Search/>
                     <NearbyTournamentsSection events={mockedEvents}/>
-                    {/*<LoreCounterButton/>*/}
             </TabScreenWrapper>
         );
 }

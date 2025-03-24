@@ -18,7 +18,8 @@ export default function Search() {
         };
 
         const handleConfirmCity = () => {
-                setCity(tempCity);
+                const newCity = tempCity.trim() === "" ? "Milano" : tempCity;
+                setCity(newCity);
                 setIsModalVisible(false);
         };
 
@@ -93,7 +94,10 @@ const ModalContent: React.FC<ModalContentProps> = ({
                                 placeholder="Es. Roma"
                                 placeholderTextColor="#AAA"
                             />
-                            <GeoLocateCityButton onCityFound={onChangeCity}/>
+                            <GeoLocateCityButton onCityFound={(cityFound) => {
+                                    const newCity = cityFound.trim() === "" ? "Città sconosciuta" : cityFound;
+                                    onChangeCity(newCity);
+                            }}/>
                     </SearchWrapper>
 
                     <Footer>
