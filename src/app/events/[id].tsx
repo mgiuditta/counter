@@ -60,17 +60,11 @@ export default function EventDetailScreen() {
 
 /* --- STYLED COMPONENTS --- */
 
-/**
- * SafeArea con sfondo scuro (dal theme)
- */
 const StyledSafeArea = styled(SafeAreaView)`
     flex: 1;
     background-color: ${(props: ThemeProps) => props.theme.colors.background};
 `;
 
-/**
- * Header con gradiente viola-verde e padding generoso
- */
 const HeaderContainer = styled.View`
     padding: ${(props: ThemeProps) => props.theme.spacing.lg}px ${(props: ThemeProps) => props.theme.spacing.md}px;
     /* Se vuoi un leggero effetto 'glow' intorno al container: */
@@ -81,9 +75,6 @@ const HeaderContainer = styled.View`
     elevation: 8;
 `;
 
-/**
- * Titolo grande in header
- */
 const HeaderTitle = styled.Text`
     font-size: ${(props: ThemeProps) => props.theme.fontSizes.xl}px;
     color: #ffffff;
@@ -109,7 +100,6 @@ const DetailCard = styled.View`
     padding: ${(props: ThemeProps) => props.theme.spacing.lg}px;
     border: 1px solid ${(props: ThemeProps) => props.theme.colors.border};
 
-    /* Ombra dal theme.effects.shadow */
     shadow-color: #000;
     shadow-offset: 0px 4px;
     shadow-opacity: 0.25;
