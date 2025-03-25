@@ -3,11 +3,11 @@ import styled from 'styled-components/native';
 import {Ionicons} from '@expo/vector-icons';
 import {useRouter} from 'expo-router';
 import {ThemeProps} from '@/utils/theme';
-import {IEvent} from '@/s-models/IEvent';
+import {Event} from '@/s-models/Event';
 import {Shop} from '@/s-models/Shop';
 
 type Props = {
-        event: IEvent & { shop: Shop };
+        event: Event & { shop: Shop };
         width: number;
         style?: any;
 };

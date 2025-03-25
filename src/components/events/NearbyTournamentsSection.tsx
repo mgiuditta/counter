@@ -3,12 +3,12 @@ import styled from 'styled-components/native';
 import {ScrollView} from 'react-native';
 import {ThemeProps} from '@/utils/theme';
 import {Shop} from '@/s-models/Shop';
-import {IEvent} from '@/s-models/IEvent';
+import {Event} from '@/s-models/Event';
 import {format} from 'date-fns';
 import {it} from 'date-fns/locale';
 import {useRouter} from 'expo-router';
 
-type EventWithShop = IEvent & { shop: Shop };
+type EventWithShop = Event & { shop: Shop };
 
 type Props = {
         events: EventWithShop[];
@@ -21,7 +21,7 @@ export default function NearbyTournamentsSection({events}: Props) {
         return (
             <SectionContainer>
                     <ScrollView>
-                            {events.map((event: IEvent & { shop: Shop }) => (
+                            {events.map((event: Event & { shop: Shop }) => (
                                 <EventCard
                                     key={event.id}
                                     onPress={() => router.push(`/events/${event.id}`)}

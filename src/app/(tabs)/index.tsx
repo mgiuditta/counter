@@ -7,7 +7,7 @@ export default function () {
         return (
             <TabScreenWrapper>
                     <Search/>
-                    <NearbyTournamentsSection events={mockedEvents}/>
+                    {/*<NearbyTournamentsSection events={mockedEvents}/>*/}
             </TabScreenWrapper>
         );
 }
