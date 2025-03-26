@@ -50,7 +50,7 @@ const TopHalf: React.FC<TopHalfProps> = ({score, onIncrement, onDecrement}) => {
                     </ActionButton>
                     <View style={{
                             transform: Platform.OS === 'ios'
-                                ? [{rotateX: '180deg'}]
+                                ? [{rotateY: '-180deg'}, {scaleX: -1}]
                                 : [{rotateY: '-180deg'}],
                             transformOrigin: 'center'
                     }}>
