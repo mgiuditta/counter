@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, TouchableOpacity, View} from "react-native";
+import {Platform, Text, TouchableOpacity, View} from "react-native";
 import styled from "styled-components/native";
 import {ThemeProps} from "@/utils/theme";
 
@@ -48,7 +48,12 @@ const TopHalf: React.FC<TopHalfProps> = ({score, onIncrement, onDecrement}) => {
                             onDecrement();
                     }}>
                     </ActionButton>
-                    <View style={{transform: [{rotateY: '-180deg'}], transformOrigin: 'center'}}>
+                    <View style={{
+                            transform: Platform.OS === 'ios'
+                                ? [{rotateX: '180deg'}]
+                                : [{rotateY: '-180deg'}],
+                            transformOrigin: 'center'
+                    }}>
                             <ScoreText>{score}</ScoreText>
                     </View>
             </TopHalfContainer>
