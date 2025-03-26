@@ -1,5 +1,5 @@
-import { Event } from "@/s-models/Event";
-import { Shop } from "@/s-models/Shop";
+import {Event} from "@/s-models/Event";
+import {Shop} from "@/s-models/Shop";
 
 export const mockedEvents: (Event & { shop: Shop })[] = [
         {

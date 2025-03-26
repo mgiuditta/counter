@@ -1,7 +1,7 @@
 import TabScreenWrapper from "@/s-components/layouts/TabsWrapper";
 import styled from "styled-components/native";
 import {ThemeProps} from "@/utils/theme";
-import { router } from 'expo-router';
+import {router} from 'expo-router';
 
 export default function Game() {
 
