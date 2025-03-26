@@ -48,7 +48,7 @@ const TopHalf: React.FC<TopHalfProps> = ({score, onIncrement, onDecrement}) => {
                             onDecrement();
                     }}>
                     </ActionButton>
-                    <View style={{transform: [{rotateY: '-180deg'}], transformOrigin: 'center'}}>
+                    <View style={{transform: [{rotateY: '-180deg'}, {scaleX: -1}], transformOrigin: 'center'}}>
                             <ScoreText>{score}</ScoreText>
                     </View>
             </TopHalfContainer>
