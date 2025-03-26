@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Modal} from "react-native";
+import {Modal} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
 import styled from "styled-components/native";
 import {ThemeProps} from "@/utils/theme";
@@ -101,7 +101,9 @@ const ModalContent: React.FC<ModalContentProps> = ({
                     </SearchWrapper>
 
                     <Footer>
-                            <Button title="Conferma" onPress={onConfirm}/>
+                            <CTAButton onPress={onConfirm}>
+                                    <CTAButtonText>Conferma</CTAButtonText>
+                            </CTAButton>
                     </Footer>
             </SafeModalContainer>
         );
@@ -162,4 +164,23 @@ const SearchInput = styled.TextInput`
 const Footer = styled.View`
     margin-top: auto;
     padding: ${(props: ThemeProps) => props.theme.spacing.md}px;
+`;
+
+const CTAButton = styled.TouchableOpacity`
+    background-color: ${(props: ThemeProps) => props.theme.colors.primary};
+    padding-vertical: ${(props: ThemeProps) => props.theme.spacing.md}px;
+    border-radius: 24px;
+    align-items: center;
+    justify-content: center;
+    shadow-color: #000;
+    shadow-offset: 0px 4px;
+    shadow-opacity: 0.25;
+    shadow-radius: 5px;
+    elevation: 4;
+`;
+
+const CTAButtonText = styled.Text`
+    color: ${(props: ThemeProps) => props.theme.colors.text};
+    font-family: ${(props: ThemeProps) => props.theme.fonts.primary.bold};
+    font-size: ${(props: ThemeProps) => props.theme.fontSizes.md}px;
 `;
